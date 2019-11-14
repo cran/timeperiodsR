@@ -1,8 +1,8 @@
 Package: timeperiodsR
 Type: Package
 Title: Simple Definition Of Time Intervals
-Version: 0.1.0
-Date: 2019-09-18
+Version: 0.2.0
+Date: 2019-11-14
 License: GPL-2
 Authors@R: 
     c(person(given  = "Alexey",
@@ -20,6 +20,6 @@ Suggests: knitr, rmarkdown
 Encoding: UTF-8
 Language: ru
 NeedsCompilation: no
-Packaged: 2019-09-18 13:41:25 UTC; Alsey
+Packaged: 2019-11-14 15:18:41 UTC; Alsey
 Repository: CRAN
-Date/Publication: 2019-09-26 09:00:02 UTC
+Date/Publication: 2019-11-14 15:40:02 UTC

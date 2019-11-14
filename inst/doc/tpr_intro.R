@@ -51,3 +51,16 @@ next5days_wt <- next_n_days(n = 5, include_current = T)
 ## ---- echo=TRUE----------------------------------------------------------
 period1 <- custom_period("2019-09-03", "2019-09-11")
 
+## ---- echo=TRUE----------------------------------------------------------
+period1 <- this_month("2019-11-07")
+period2 <- previous_week("2019-11-07")
+
+print(period1)
+print(period2)
+
+## ---- echo=TRUE----------------------------------------------------------
+period1 %left_in% period2   # получить даты из period1 которые входят в period2
+period1 %left_out% period2  # получить даты из period1 которые не входят в period2
+period1 %right_in% period2  # получить даты из period2 которые входят в period1
+period1 %right_out% period2 # получить даты из period2 которые не входят в period2
+
