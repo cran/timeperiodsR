@@ -1,5 +1,5 @@
-a51fdbd5bb9b9fc66c501418474c7ac1 *DESCRIPTION
-68f9df59928267f2c6a53a85e747ef2f *NAMESPACE
+32be4a82a7076be5d6a99a29bebc6075 *DESCRIPTION
+2a279694bf58f0430c1ebb68bbcb8c24 *NAMESPACE
 1ce321ab6b1ce5b68c3fdb784cd423a3 *NEWS.md
 03af446d37d458f75da31add2f59715c *R/custom_period.R
 4abad2a8e9a37790784dd03c4b09d51c *R/last_n_days.R
@@ -7,7 +7,7 @@ a51fdbd5bb9b9fc66c501418474c7ac1 *DESCRIPTION
 fdb524d41298e8026e65dbebddaaee1b *R/last_n_quarters.R
 c6c4e756849f1b0378e164cd75125739 *R/last_n_weeks.R
 4475fa4bcfaa629e8db0396b45abe712 *R/last_n_years.R
-052dc5a39addad79fa3f543486343f7d *R/methods.R
+6b2a2e392c6c04e5e431f994d6e44f47 *R/methods.R
 ce3f39454f9fdc4bd316311a67488b4f *R/next_month.R
 b7f6a5bfb58eca2d531ff49c9e8c0bbe *R/next_n_days.R
 2c56a0360d9c8592824609f87c2dc27a *R/next_n_months.R
@@ -28,12 +28,13 @@ d2bdda8b0db4451c17b3a0cc4314d177 *R/this_month.R
 f3a82eef04af014b2c9c85092ddb7ac9 *R/this_year.R
 d05b1548132b7edd41df4d8b8825d2c7 *R/zzz.R
 c558bc9253bf898b2eb980d5fb034473 *README.md
-7e63e2e8f1477da52b08af497484f2f1 *build/partial.rdb
+8a3f000d0e7b2e1365d1f2994903875f *build/partial.rdb
 6e14e7f858009d45029ce504917da0ff *build/vignette.rds
-b1df166d379bb06db3f8f4fe8cd3a6ac *inst/doc/tpr_intro.R
-21841e76809eacef72933d567f5a696d *inst/doc/tpr_intro.Rmd
-fe47a68440438c228dd7d3aa25aedb28 *inst/doc/tpr_intro.html
+c4981fc0085f0434ca9db030668f3754 *inst/doc/tpr_intro.R
+ff3626d58406496a930a42410f691272 *inst/doc/tpr_intro.Rmd
+7e86a50faa6ae56a2ef028bde7d11b49 *inst/doc/tpr_intro.html
 de380f632dc46c57655b0f1f16e6c6e4 *inst/timeperiodsR_logo.png
+e1ec09107fa3d8be3183d128fa28953a *man/as_timeperiod.Rd
 3ace4a2eab6a3d634fc5c46463260c3e *man/custom_period.Rd
 dea5883ccfb51e0e9660ddc97e735968 *man/last_n_days.Rd
 283e31bc52652be07c5bdaedb2ed06ff *man/last_n_months.Rd
@@ -59,4 +60,4 @@ a418036d1a0b39064c4f5cade7a7da2f *man/this_month.Rd
 a09229a6cdab77484bdc0439f76aeaab *man/this_week.Rd
 d4aea9977c63a6dda1a93f5fb6607534 *man/this_year.Rd
 ea1ddd855a7fef6580b08a3e9d5ae68f *man/timeperiodsR-package.Rd
-21841e76809eacef72933d567f5a696d *vignettes/tpr_intro.Rmd
+ff3626d58406496a930a42410f691272 *vignettes/tpr_intro.Rmd
