@@ -9,7 +9,7 @@ function(x = Sys.Date(),
     }
     
     start <- floor_date( x, unit = "quarter" ) - months(3 * n) 
-    stop  <- start + months(3 * n) - days(1) + months(ifelse( isTRUE(include_current), 3, 0))
+    stop  <- start + months(3 * n + ifelse( isTRUE(include_current), 3, 0)) - days(1) 
     
     out   <- custom_period(start, stop)
     

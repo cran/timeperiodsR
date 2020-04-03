@@ -29,7 +29,7 @@ custom_period <- function( start,
                   workdays_length = length(workdays),
                   weekends_length = length(weekends))
     
-    if ( getOption( "timeperiodsR.official_day_offs" ) | ! is.null(getOption( "timeperiodsR.custom_day_offs" )) ) {
+    if ( getOption( "timeperiodsR.official_day_offs" ) ) {
       
         out$dayoffs_marks     <- check_dayoffs(date = as.character(sequence))
         
