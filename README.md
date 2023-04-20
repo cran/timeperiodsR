@@ -1,18 +1,28 @@
-**timeperiodsR** - Упрощённое создание временных периодов, и извлечение их элементов в R <a href='https:/selesnow.github.io/timeperiodsR'><img src='https://raw.githubusercontent.com/selesnow/timeperiodsR/master/inst/timeperiodsR_logo.png' align="right" height="139" /></a>
+**timeperiodsR** - Упрощённое создание временных периодов, и извлечение их элементов в R <a href='https://selesnow.github.io/timeperiodsR/'><img src='https://raw.githubusercontent.com/selesnow/timeperiodsR/master/inst/timeperiodsR_logo.png' align="right" height="139" /></a>
 
 # Цель пакета timeperiodsR
-Зачастую при создании скриптов которые в последвии будут запускаться по рассписанию нам необходимо определить период, как правило таким периодом может быть прошлая неделя, прошлый месяц, какое то количество прошлых дней. Пакет `timeperiodsR` предоставляет вам набор функций которые автоматически будут вычислять такой период от какой либо базовой даты.
+Зачастую при создании скриптов которые в последвии будут запускаться по рассписанию нам необходимо определить период. Как правило таким периодом может быть прошлая неделя, прошлый месяц или какое то количество прошлых дней. Пакет `timeperiodsR` предоставляет вам набор функций которые автоматически будут вычислять такой период относительно какой либо базовой даты.
 
-Также пакет позволяет вам получить за любой период вектор будних и выходных дней и официальные праздничные и рабочие дни для России, Украины, Белорусии и Казахстана. 
+Также вы сможете легко образаться к множеству компонентов выбранного периода:
+* Получить первую и последнюю дату
+* Получить вектор из дат водящих в период
+* Получить вектор из будних дней
+* Получить вектор выходных дней
+* Получить вектор официальных праздников и рабочих дней для России, Украины, Белоруссии и Казахстана
+* Задавать пользовательский список выходных дней
 
 # Видео уроки по работе с timeperiodsR
-Для того, что бы вам было проще разобраться с пакетом я создал на YouTube [плейлист](https://www.youtube.com/playlist?list=PLD2LDq8edf4qed2KVKfXmKdh0OQcdj9gw) с короткими видео уроками.
+Что бы вам было проще разобраться с функционалом пакета я записал серию видео уроков и создал [плейлист](https://www.youtube.com/playlist?list=PLD2LDq8edf4qed2KVKfXmKdh0OQcdj9gw) на YouTube.
 
-1. [Как получить начальную и конечную дату прошлого месяца и операторы фильтрации вектора дат](https://youtu.be/NgfWELbM6Fk)
-2. [Как получить вектор будних и выходных дней из объекта класса tpr или вектора дат](https://youtu.be/jwJA-fgQwoQ)
+1. [Как получить начальную и конечную дату прошлого месяца на языке R](https://youtu.be/NgfWELbM6Fk)
+2. [Как получить вектор будних и выходных дней](https://youtu.be/jwJA-fgQwoQ)
 3. [Получить официальные выходные и рабочие дни в странах СНГ](https://youtu.be/meYb5LRV3k8)
 4. [Расширения класса tpr с помощью переменных среды](https://youtu.be/W-rUYf3AHqA)
-5. [Пользовательский список выходных дней](https://youtu.be/c_WQmN6yBl0)
+5. [Пользовательский список выходных дней в R](https://youtu.be/c_WQmN6yBl0)
+6. [Проверка наличия данных в БД за определённый период](https://youtu.be/UMQ_S5w-T9c)
+
+# Виньетка
+Наиболее подробное описание по работе с пакетом `timeperiodsR` вы можете найти в виньетке, `vignette("tpr_intro", package = "timeperiodsR")`
 
 # Функции пакета timeperiodsR
 Текущая версия пакета состоит из 24 функций, по названию каждой из функций можно определить какой временной интервал она возвращает.
@@ -43,7 +53,7 @@
 * `next_n_years()`
 * `custom_period()`
 
-## Компоненты получаемых объектов
+## Основные компоненты получаемых объектов
 Любая из функций пакета возвращает объект класса `tpr` состоящий из следующих компонентов:
 * start - начальную дату;
 * end - конечную дату;
@@ -63,7 +73,7 @@
 * *week_start* - Какой день будет являться началом недели: 1 - понедельник, 7 - воскресенье;
 * *include_current* - Включать ли в период текущий временной объект, TRUE или FALSE.
 
-## Основные методы
+## Методы
 Пакет `timeperiodsR` имеет несколько методов, позволяющих вам извлекать некоторые элементы объектов класса *tpr*.
 
 * `seq` - получить последовательность дат из объекта класса *tpr*;
@@ -109,24 +119,21 @@ length(last2weeks)
 * %right_out% - сравнивает два объекта класса tpr, и возвращает значение из правого, которые отсутвуют в левом.
 * %right_in% - сравнивает два объекта класса tpr, и возвращает даты из правого объекта которые присутвуют в левом.
 
-## Виньетки
-Наиболее подробное описание по работе с пакетом `timeperiodsR` вы можете найти в виньетке, `vignette("tpr_intro", package = "timeperiodsR")`
-
 ### Ссылки
 1. [Полная, официальная документация по работе с пакетом timeperiodsR](https://selesnow.github.io/timeperiodsR/).
-2. Баг репорты, предложения по доработке и улучшению функционала timeperiodsR оставлять [тут](https://github.com/selesnow/timeperiodsR/issues). 
-3. [Список релизов](https://github.com/selesnow/timeperiodsR/releases).
-4. [Телеграмм канал R4marketing](https://t.me/R4marketing).
-5. [Группа в Вконтакте](https://vk.com/data_club).
+2. [Видео уроки](https://www.youtube.com/playlist?list=PLD2LDq8edf4qed2KVKfXmKdh0OQcdj9gw)
+3. Баг репорты, предложения по доработке и улучшению функционала timeperiodsR оставлять [тут](https://github.com/selesnow/timeperiodsR/issues). 
+4. [Список релизов](https://github.com/selesnow/timeperiodsR/releases).
+5. [Телеграмм канал R4marketing](https://t.me/R4marketing).
 
 ### Автор пакета
-Алексей Селезнёв, Head of analytics dept. at [Netpeak](https://netpeak.net)
+Алексей Селезнёв, Head of analytics dept. at [Netpeak](https://netpeak.net/en/gb/)
 <Br>email: selesnow@gmail.com
 <Br>skype: selesnow
-<Br>facebook: [facebook.com/selesnow](https://facebook.com/selesnow)
+<Br>facebook: [facebook.com/selesnow](https://www.facebook.com/selesnow)
 <Br>blog: [alexeyseleznev.wordpress.com](https://alexeyseleznev.wordpress.com/)
 
 ### Бейджи
-[![Rdoc](http://www.rdocumentation.org/badges/version/timeperiodsR)](http://www.rdocumentation.org/packages/timeperiodsR)
+[![Rdoc](http://www.rdocumentation.org/badges/version/timeperiodsR)](https://www.rdocumentation.org/packages/timeperiodsR)
 [![rpackages.io rank](http://www.rpackages.io/badge/timeperiodsR.svg)](http://www.rpackages.io/package/timeperiodsR)
 [![](https://cranlogs.r-pkg.org/badges/timeperiodsR)](https://cran.r-project.org/package=timeperiodsR)

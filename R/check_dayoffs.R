@@ -1,10 +1,12 @@
-check_dayoffs <- function(date    = NULL,
-                          year    = NULL,
-                          month   = NULL,
-                          day     = NULL,
-                          cc      = getOption("timeperiodsR.official_day_offs_country"),
-                          pre     = getOption("timeperiodsR.official_day_offs_pre"),
-                          include_custom_day_offs = TRUE) {
+check_dayoffs <- function(
+    date    = NULL,
+    year    = NULL,
+    month   = NULL,
+    day     = NULL,
+    cc      = getOption("timeperiodsR.official_day_offs_country"),
+    pre     = getOption("timeperiodsR.official_day_offs_pre"),
+    include_custom_day_offs = TRUE
+    ) {
   
   # check httr
     if ( !requireNamespace("httr", quietly = TRUE) ) { 
@@ -27,7 +29,7 @@ check_dayoffs <- function(date    = NULL,
   
   if ( ! is.null(date) ) {
   
-    if ( "tpr" %in% class(date) ) {
+    if ( inherits(date, "tpr") ) {
       
       date <- as.character(seq(date))
       
@@ -47,7 +49,7 @@ check_dayoffs <- function(date    = NULL,
               }
                 
               if ( ! is.null(x) ) {
-                if ( ! class(x) == "Date" ) x <- as.Date(x)
+                if ( ! inherits(x, "Date") ) x <- as.Date(x)
                 year  <- format(x, "%Y")
                 month <- format(x, "%m")
                 day   <- format(x, "%d")
@@ -62,8 +64,21 @@ check_dayoffs <- function(date    = NULL,
                            pre=pre
                            )
               )
-              temp_out <- httr::content(ans, encoding = "UTF-8")
+              
+              # check status
+              if ( httr::http_error(ans) ) {
+                
+                warning('isDayOff API Internal Error')
+                temp_out <- "9"
+                
+              } else {
+                
+                temp_out <- httr::content(ans, encoding = "UTF-8")
+                  
+              }
+              
               return(temp_out)
+              
              }, USE.NAMES = TRUE
      )
     
@@ -78,7 +93,18 @@ check_dayoffs <- function(date    = NULL,
                        pre=pre)
                      )
     
-    out <- httr::content(ans, encoding = "UTF-8")
+    # check status
+    if ( httr::http_error(ans) ) {
+      
+      warning('isDayOff API Internal Error')
+      temp_out <- "9"
+      
+    } else {
+      
+      out <- httr::content(ans, encoding = "UTF-8")
+      
+    }
+    
   }
   
   return(out)
