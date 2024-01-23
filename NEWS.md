@@ -1,3 +1,9 @@
+# timeperiodsR 0.7.3
+* Исправлена ссылка в README файле.
+
+# timeperiodsR 0.7.2
+* Исправление документации по требованиям CRAN. исправил файл `timeperiodsR-package.Rd`.
+
 # timeperiodsR 0.7.1
 * Исправил ссылки в README и DESCRIPTION
 

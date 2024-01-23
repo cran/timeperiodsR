@@ -1,6 +1,6 @@
-022f2601a0e09d5fecaa13b349545851 *DESCRIPTION
+f82f8e56492674295a2ae35a4b2caf5b *DESCRIPTION
 61033ff11e1263c27dfdd50c45f31f7d *NAMESPACE
-1d91a47c0f49a51fc793e72d92baf8a8 *NEWS.md
+cc9d85a547d833546f16342da4d2f50e *NEWS.md
 e88ebadc13312e9e6a7363a722cb8dbf *R/check_dayoffs.R
 faeb2a24fec043ca40195df83a1798f8 *R/custom_period.R
 e4fc86cc89084c569eba203c6044ebc8 *R/last_n_days.R
@@ -28,12 +28,12 @@ fa1232eae6d0b25df8ca7caa2440fa76 *R/previous_week.R
 14e317521038d7e77a02c0b454184bfd *R/this_week.R
 0b5b111cf018e798bd1de12106008231 *R/this_year.R
 ca25e0b8a3dbfc8bed50e31ac311bd1c *R/zzz.R
-17342bfdecfc285f5ab9cd0009f508e8 *README.md
-653d056b931ec7ab3078ac5ba70af74c *build/partial.rdb
-ab40db6dae413063d20e54677aaec2a6 *build/vignette.rds
+28faf69a0fd089864e33ed6eca966edc *README.md
+68f83ed37b986d1ff938f711e630553a *build/partial.rdb
+0eae2b591d2bc7095d1c3d663292aa2c *build/vignette.rds
 8c465c0236a6fe3170616aff70da6d6e *inst/doc/tpr_intro.R
 88326a2cb4557e3764d6147546ad3685 *inst/doc/tpr_intro.Rmd
-8e338c1a446160a48eb231f14500ce31 *inst/doc/tpr_intro.html
+72007fa333d3837f817f82462355de3d *inst/doc/tpr_intro.html
 de380f632dc46c57655b0f1f16e6c6e4 *inst/timeperiodsR_logo.png
 e1ec09107fa3d8be3183d128fa28953a *man/as_timeperiod.Rd
 d8797e38f7b60315d199e6dc87974214 *man/check_dayoffs.Rd
@@ -65,7 +65,7 @@ a04b76729ebf429fd2e8a7af41baf211 *man/this_month.Rd
 48303e0bb9bfa56587e23eabcff083a1 *man/this_quarter.Rd
 9a2cc7262eddea34c2ec16075274440d *man/this_week.Rd
 1c661348afc8581590daa052e33858f3 *man/this_year.Rd
-ea1ddd855a7fef6580b08a3e9d5ae68f *man/timeperiodsR-package.Rd
+89fe6bb7f75ee239dc63de2916cecd3d *man/timeperiodsR-package.Rd
 9834d738583d42305b0b59a0ad93ceea *man/weekends.Rd
 6b1451c41400d8bbf3f9837a0af87500 *man/weekends_length.Rd
 64748e93a3198b95524208e392c1d817 *man/workdays.Rd
