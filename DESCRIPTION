@@ -1,7 +1,7 @@
 Package: timeperiodsR
 Type: Package
 Title: Simple Definition Of Time Intervals
-Version: 0.7.5
+Version: 0.7.7
 License: GPL-2
 Authors@R: 
     c(person(given  = "Alexey",
@@ -22,6 +22,6 @@ Encoding: UTF-8
 Language: en, ru
 RoxygenNote: 7.3.2
 NeedsCompilation: no
-Packaged: 2026-04-16 14:13:49 UTC; User
+Packaged: 2026-05-12 10:29:40 UTC; User
 Repository: CRAN
-Date/Publication: 2026-04-16 23:10:02 UTC
+Date/Publication: 2026-05-12 10:40:01 UTC

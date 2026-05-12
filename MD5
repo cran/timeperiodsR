@@ -1,7 +1,7 @@
-9e95a5fc000cbc0fbcbc5427db114a3e *DESCRIPTION
+b4716454aca827db7bafa963cd442229 *DESCRIPTION
 61033ff11e1263c27dfdd50c45f31f7d *NAMESPACE
-4036d528532b7f351236f940ec4f44ac *NEWS.md
-61d19ca8cb7381249691e814bbda7d5d *R/check_dayoffs.R
+753514e16bf4e10a6ca57edf8d3ef6b4 *NEWS.md
+e88ebadc13312e9e6a7363a722cb8dbf *R/check_dayoffs.R
 faeb2a24fec043ca40195df83a1798f8 *R/custom_period.R
 e4fc86cc89084c569eba203c6044ebc8 *R/last_n_days.R
 9fdb3d72a27791db7a940c26cfeaaaa1 *R/last_n_months.R
@@ -28,12 +28,12 @@ fa1232eae6d0b25df8ca7caa2440fa76 *R/previous_week.R
 14e317521038d7e77a02c0b454184bfd *R/this_week.R
 0b5b111cf018e798bd1de12106008231 *R/this_year.R
 ca25e0b8a3dbfc8bed50e31ac311bd1c *R/zzz.R
-28faf69a0fd089864e33ed6eca966edc *README.md
-05481624620458f81ca0d3947d431b18 *build/partial.rdb
+862b30cf91730763d2ae7b1ee2ba2b5d *README.md
+1a9714c52346919b0c8bf6fdebf10fc0 *build/partial.rdb
 16450d0ec497dcedb08ec19ce7c9edcd *build/vignette.rds
 fc1a6de9979854c967109c85335e2c06 *inst/doc/tpr_intro.R
 5f9d1516b185ce0096a8e7ca743a39bd *inst/doc/tpr_intro.Rmd
-83fd99aa2cf659320edb9e7112b3467b *inst/doc/tpr_intro.html
+9fc92f5b26c1886e00a03a3d22b5cb64 *inst/doc/tpr_intro.html
 de380f632dc46c57655b0f1f16e6c6e4 *inst/timeperiodsR_logo.png
 e1ec09107fa3d8be3183d128fa28953a *man/as_timeperiod.Rd
 c5d96a44a8597937ddfde2e4fdd655ed *man/check_dayoffs.Rd
