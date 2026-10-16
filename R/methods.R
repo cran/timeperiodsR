@@ -16,24 +16,17 @@ function(x, ...) {
 
 }
 
-seq.tpr <- function(x, ...) {
+seq.tpr <- function(x, 
+                    by = "day",
+                    what = c("sequence", 
+                             "workdays",
+                             "weekends",
+                             "official_day_offs",
+                             "official_workdays",
+                             "custom_day_offs"), 
+                    ...) {
   
-  if ( missing(...) ) {
-    by <- "day"
-    what <- c("sequence", 
-              "workdays",
-              "weekends",
-              "official_day_offs",
-              "official_workdays",
-              "custom_day_offs")
-  }
-  
-  what <- match.arg(what, c("sequence", 
-                            "workdays",
-                            "weekends",
-                            "official_day_offs",
-                            "official_workdays",
-                            "custom_day_offs"))
+  what <- match.arg(what)
   
   if ( what == "sequence" ) {
     
@@ -198,13 +191,13 @@ first_workday <- function(x) {
 
 first_workday.default <- function(x) {
   x <- as.Date(x)
-  out <- x[ format(x, "%w") %in% c("0", "6") ]
+  out <- x[ ! format(x, "%w") %in% c("0", "6") ]
+  if ( length(out) == 0 ) return(as.Date(NA))
   return(min(out))
 }  
 
 first_workday.tpr <- function(x) {
-  out <- x$first_workday
-  return(min(out))
+  return(x$first_workday)
 }
 
 # ###############################
@@ -214,13 +207,13 @@ last_workday <- function(x) {
 
 last_workday.default <- function(x) {
   x <- as.Date(x)
-  out <- x[ format(x, "%w") %in% c("0", "6") ]
+  out <- x[ ! format(x, "%w") %in% c("0", "6") ]
+  if ( length(out) == 0 ) return(as.Date(NA))
   return(max(out))
 }  
 
 last_workday.tpr <- function(x) {
-  out <- x$last_workday
-  return(min(out))
+  return(x$last_workday)
 }
 
 # ###############################
@@ -231,12 +224,12 @@ first_weekend <- function(x) {
 first_weekend.default <- function(x) {
   x <- as.Date(x)
   out <- x[ format(x, "%w") %in% c("0", "6") ]
+  if ( length(out) == 0 ) return(as.Date(NA))
   return(min(out))
 }  
 
 first_weekend.tpr <- function(x) {
-  out <- x$first_weekend
-  return(min(out))
+  return(x$first_weekend)
 }
 
 # ###############################
@@ -245,14 +238,14 @@ last_weekend <- function(x) {
 }
 
 last_weekend.default <- function(x) {
-  x <- as.Date()
-  out <- x[ ! format(x, "%w") %in% c("0", "6") ]
+  x <- as.Date(x)
+  out <- x[ format(x, "%w") %in% c("0", "6") ]
+  if ( length(out) == 0 ) return(as.Date(NA))
   return(max(out))
 }  
 
 last_weekend.tpr <- function(x) {
-  out <- x$last_weekend
-  return(min(out))
+  return(x$last_weekend)
 }
 
 # ###############################
@@ -262,8 +255,6 @@ workdays_length <- function(x) {
 
 workdays_length.default <- function(x) {
   x <- as_timeperiod(x)
-  x <- workdays(x)
-  
   return(x$workdays_length)
 }  
 
@@ -280,9 +271,7 @@ weekends_length <- function(x) {
 
 weekends_length.default <- function(x) {
   x <- as_timeperiod(x)
-  out <- weekends(x)
-  
-  return(out)
+  return(x$weekends_length)
 }  
 
 weekends_length.tpr <- function(x) {
@@ -298,7 +287,7 @@ custom_day_offs <- function(x) {
 custom_day_offs.default <- function(x) {
   #x <- as.Date(x)
   dayoffs_marks <- check_dayoffs(date = as.character(x))
-  out <- x[dayoffs_marks == "3"]
+  out <- x[dayoffs_marks %in% "3"]
   return(out)
 }  
 

@@ -18,10 +18,10 @@ end   <- period$end   # последний день прошлого месяц�
 ## ----eval=FALSE---------------------------------------------------------------
 # install.packages("httr")
 
-## ----eval=TRUE----------------------------------------------------------------
-options("timeperiodsR.official_day_offs" = TRUE,
-        "timeperiodsR.official_day_offs_country" = "ua",
-        "timeperiodsR.official_day_offs_pre" = 1)
+## ----eval=FALSE---------------------------------------------------------------
+# options("timeperiodsR.official_day_offs" = TRUE,
+#         "timeperiodsR.official_day_offs_country" = "ua",
+#         "timeperiodsR.official_day_offs_pre" = 1)
 
 ## ----echo=TRUE, eval=TRUE-----------------------------------------------------
 last2weeks <- last_n_weeks(n = 2)

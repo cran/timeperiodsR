@@ -1,7 +1,7 @@
 Package: timeperiodsR
 Type: Package
 Title: Simple Definition Of Time Intervals
-Version: 0.7.7
+Version: 0.7.9
 License: GPL-2
 Authors@R: 
     c(person(given  = "Alexey",
@@ -17,11 +17,12 @@ URL: https://selesnow.github.io/timeperiodsR/,
         https://www.youtube.com/playlist?list=PLD2LDq8edf4qed2KVKfXmKdh0OQcdj9gw
 Imports: lubridate
 VignetteBuilder: knitr
-Suggests: knitr, rmarkdown, httr
+Suggests: knitr, rmarkdown, httr, testthat (>= 3.0.0)
+Config/testthat/edition: 3
 Encoding: UTF-8
 Language: en, ru
 RoxygenNote: 7.3.2
 NeedsCompilation: no
-Packaged: 2026-05-12 10:29:40 UTC; User
+Packaged: 2026-10-15 18:39:25 UTC; User
 Repository: CRAN
-Date/Publication: 2026-05-12 10:40:01 UTC
+Date/Publication: 2026-10-16 07:10:02 UTC

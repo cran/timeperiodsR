@@ -65,10 +65,12 @@ Alexey Seleznev
 }
 
 \references{
-\href{https://www.isdayoff.ru/}{Official documentation for isDayOff API}
+Official documentation for isDayOff API.
 }
 
 \examples{
+\donttest{
 ld <- next_n_weeks(n = 2)
 check_dayoffs(date = ld)
+}
 }

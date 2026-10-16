@@ -4,6 +4,8 @@
     stop("right value must be object of tpr class")
   }
   
+  y <- y$sequence
+  
   if ( inherits(x, "tpr") ) {
     x <- x$sequence
   } else {

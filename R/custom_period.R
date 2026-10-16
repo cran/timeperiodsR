@@ -21,23 +21,30 @@ custom_period <- function( start,
                   sequence        = sequence,
                   workdays        = workdays,
                   weekends        = weekends,
-                  first_workday   = min(workdays),
-                  last_workday    = max(workdays),
-                  first_weekend   = min(weekends),
-                  last_weekend    = max(weekends),
+                  first_workday   = if ( length(workdays) > 0 ) min(workdays) else as.Date(NA),
+                  last_workday    = if ( length(workdays) > 0 ) max(workdays) else as.Date(NA),
+                  first_weekend   = if ( length(weekends) > 0 ) min(weekends) else as.Date(NA),
+                  last_weekend    = if ( length(weekends) > 0 ) max(weekends) else as.Date(NA),
                   length          = length(sequence),
                   workdays_length = length(workdays),
                   weekends_length = length(weekends))
     
-    if ( getOption( "timeperiodsR.official_day_offs" ) | ! is.null(getOption( "timeperiodsR.custom_day_offs" )) ) {
+    if ( isTRUE( getOption( "timeperiodsR.official_day_offs" ) ) ) {
       
         out$dayoffs_marks     <- check_dayoffs(date = as.character(sequence))
         
         out$official_day_offs <- sequence[ out$dayoffs_marks %in% c("1", "2", "3") ]
         out$official_workdays <- sequence[ ! out$dayoffs_marks %in% c("1", "2", "3") ]
-        out$official_first_workday <- min(out$official_workdays)
-        out$official_last_workday  <- max(out$official_workdays)
+        out$official_first_workday <- if ( length(out$official_workdays) > 0 ) min(out$official_workdays) else as.Date(NA)
+        out$official_last_workday  <- if ( length(out$official_workdays) > 0 ) max(out$official_workdays) else as.Date(NA)
         out$custom_day_offs <- sequence[ out$dayoffs_marks == "3" ]
+        
+    } else if ( ! is.null(getOption( "timeperiodsR.custom_day_offs" )) ) {
+      
+        custom_day_offs_cha <- as.character(getOption("timeperiodsR.custom_day_offs"))
+        out$dayoffs_marks <- ifelse(as.character(sequence) %in% custom_day_offs_cha, "3", "0")
+        names(out$dayoffs_marks) <- as.character(sequence)
+        out$custom_day_offs <- sequence[ as.character(sequence) %in% custom_day_offs_cha ]
         
     } 
     
